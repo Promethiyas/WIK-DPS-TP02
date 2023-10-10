@@ -48,7 +48,8 @@ Et vous pouvez maintenant faire:
 .\snyk container test wik-dps-tp02-ts-node-docker > rapport.txt
 ```
 
-Ce qui va mettre dans le fichier rapport.txt toutes les vulnérabilités trouvés, avec un réumé tout en bas.
+Ce qui va mettre dans le fichier rapport.txt toutes les vulnérabilités trouvés, avec un résumé tout en bas.
+ [rapport.txt](./rapport.txt)
 
 
 ## User
