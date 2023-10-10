@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   ts-node-docker:
-    user : "1000"
+    user : "newuser"
     build:
       context: .
       dockerfile: Dockerfile

@@ -1,6 +1,7 @@
 FROM node:14 as base
-
-WORKDIR /home/node/app
+RUN useradd -ms /bin/bash newuser
+USER newuser
+WORKDIR /home/newuser/app
 
 COPY package*.json ./
 
