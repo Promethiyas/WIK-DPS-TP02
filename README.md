@@ -1,15 +1,34 @@
 # WIK-DPS-TP02
 WIK-DPS-TP02 est le second TP devops à rendre. Après un problème lié à l'installation de docker j'ai pu rattraper le retard du matin. J'ai suivi différentes documentations afin de comprendre le fonctionnement de la conteneurisation.
 
-## Lancement du projet
-
-Allez dans votre terminal, déplacez-vous dans le répertoire de votre choix et saisissez:
+## Lancement du projet 
 
 ```bash
 git clone https://github.com/Promethiyas/WIK-DPS-TP02.git
 ```
 
-Deplacez vous dans le dossier ***\WIK-DPS-TP02*** et lancez cette commande:
+Deplacez vous dans le dossier ***\WIK-DPS-TP02***
+
+### Un seul stage
+
+Pour Build le docker pour accéder à notre précédent projet il faut d'abord utiliser:
+
+```bash
+docker build -t dockfile1 -f dockerfile1 .  
+```
+
+Afin de générer l'image.
+Puis pour le lancer:
+
+```bash
+docker run -it -p 3000:3000 dockfile1     
+```
+
+ATTENTION: On peut pas avoir les deux images en même temps vu qu'elles utilisent le même port.
+
+### Multi-Stage
+
+Lancez cette commande afin de Build l'image:
 
 ```bash
 docker-compose build
@@ -39,7 +58,7 @@ curl https://static.snyk.io/cli/latest/snyk-win.exe -o snyk.exe
 Puis vous devez vous authentifier avec:
 
 ```bash
-snyk auth
+.\snyk auth
 ```
 
 Et vous pouvez maintenant faire:
@@ -51,5 +70,6 @@ Et vous pouvez maintenant faire:
 Ce qui va mettre dans le fichier rapport.txt toutes les vulnérabilités trouvés, avec un résumé tout en bas.
  [rapport.txt](./rapport.txt)
 
+## USER
 
-## User
+On peut voir dans les deux ***dockerfile*** que l'user est changé, mais dans l'application Docker Desktop en accédant au termina et en tapant ***whoami*** on peut voir apparaitre ***newuser***, l'user créé dans le fichier.
