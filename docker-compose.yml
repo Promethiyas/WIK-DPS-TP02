@@ -8,8 +8,8 @@ services:
       dockerfile: Dockerfile
       target: base
     volumes:
-      - ./src:/home/node/app/src
-      - ./nodemon.json:/home/node/app/nodemon.json
+      - ./src:/home/newuser/app/src
+      - ./nodemon.json:/home/newuser/app/nodemon.json
     container_name: ts-node-docker
     expose:
       - '3000'
